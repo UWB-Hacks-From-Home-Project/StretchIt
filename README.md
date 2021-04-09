@@ -1,3 +1,10 @@
 # UWB Hacks from Home Project
 
-Made by Audrey, Alex, Vincent and Christian
+### Goal
+The goal of this project is to make a posture reminding and correcting app to help remind people to maintain good posture while using their computers as well as supply exercises to reduce the pain caused by having bad posture.
+
+### Background
+We noticed that...
+
+### Contributions
+Created by Audrey, Alex, Vincent and Christian
