@@ -4,8 +4,6 @@
   "version": "0.0.1",
   "description": "",
 
-  "options_page": "options.html",
-
   "icons": {
     "16": "logo16.png",
 		"48": "logo48.png",
@@ -14,23 +12,29 @@
   },
 
   "browser_action": {
-	  "default_popup": "main.html",
-	  "default_logo": "logo256.png"
+    "default_popup": "main.html",
+    "default_logo": "logo256.png"
   },
 
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["/js/content.js"]
+    }
+  ],
+
   "background": {
-	  "scripts": ["/js/background.js"],
-	  "persistent": true
+    "scripts": ["/js/background.js"],
+    "persistent": false
   },
 
   "permissions": [
     "storage",
     "downloads",
     "activeTab",
-    "http://*:9321/",
     "idle",
     "notifications",
     "alarms",
-    "Background"
+    "background"
   ]
 }
