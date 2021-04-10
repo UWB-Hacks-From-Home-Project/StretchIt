@@ -28,6 +28,9 @@
     "downloads",
     "activeTab",
     "http://*:9321/",
-    "idle"
+    "idle",
+    "notifications",
+    "alarms",
+    "Background"
   ]
 }
