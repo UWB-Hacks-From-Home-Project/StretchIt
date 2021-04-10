@@ -1,0 +1,8 @@
+html, body, div {
+    background-color: #050122 !important;
+    color: rgb(208, 208, 208) !important;
+}
+
+hr {
+    border-top: 1px solid rgba(255,255,255,.1) !important;
+}
