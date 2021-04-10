@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/font-awesome.min.css">
 	</head>
@@ -8,26 +9,40 @@
 		<div class="container p-2" id="settings">
 			<p class="h3 text-center font-weight-bold">StretchIt Settings</p>
 			<hr class="w-50">
-			<form>
+			<form id="settingsForm">
 				<p class="text-center font-weight-bold">
-					How often do you want to be reminded?
+					How often do you want to be reminded about posture?
 				</p>
 				<p class="small w-100 text-center">
-					<span class="d-inline mr-2">Not often</span><input type="range" class="mt-1 form-control-inline w-50" min="0" max="10" name="freq"><span class="d-inline ml-2">Very often</span>
+					<span class="d-inline mr-2">Not often</span><input type="range" class="mt-1 form-control-inline w-50" min="0" max="4" name="posturefreq"><span class="d-inline ml-2">Very often</span>
+				</p>
+				<hr class="w-25">
+				<p class="text-center font-weight-bold">
+					How often do you want to be reminded about taking breaks?
+				</p>
+				<p class="small w-100 text-center">
+					<span class="d-inline mr-2">Not often</span><input type="range" class="mt-1 form-control-inline w-50" min="0" max="4" name="breakfreq"><span class="d-inline ml-2">Very often</span>
+				</p>
+				<hr class="w-25">
+				<p class="text-center font-weight-bold">
+					How often do you want to be notified about stretches?
+				</p>
+				<p class="small w-100 text-center">
+					<span class="d-inline mr-2">Not often</span><input type="range" class="mt-1 form-control-inline w-50" min="0" max="4" name="stretchfreq"><span class="d-inline ml-2">Very often</span>
 				</p>
 				<hr class="w-50">
 				<p class="text-center mt-2 mb-1 font-weight-bold">What metrics should be used to send remiders?</p>
 				<div class="text-center">
 					<div class="form-check-inline">
-						<input type="checkbox" class="form-check-input" name="remindtype" value="typing" checked>
+						<input type="checkbox" class="form-check-input" name="metrics" value="typing" checked>
 						<span class="form-check-label">Track typing amount</span>
 					</div>
 					<div class="form-check-inline">
-						<input type="checkbox" class="form-check-input" name="remindtype" value="mouse" checked>
+						<input type="checkbox" class="form-check-input" name="metrics" value="mouse" checked>
 						<span class="form-check-label">Track mouse usage</span>
 					</div>
 					<div class="form-check-inline">
-						<input type="checkbox" class="form-check-input" name="remindtype" value="browser" checked>
+						<input type="checkbox" class="form-check-input" name="metrics" value="browser" checked>
 						<span class="form-check-label">Track browser usage</span>
 					</div>
 				</div>
@@ -52,15 +67,15 @@
 				<p class="text-center mt-2 mb-1 font-weight-bold">How would you like to be notified?</p>
 				<div class="text-center">
 					<div class="form-check-inline">
-						<input type="checkbox" class="form-check-input" name="remindtype" value="sounds" checked>
+						<input type="checkbox" class="form-check-input" name="notificationlevel" value="sounds" checked>
 						<span class="form-check-label">Sounds</span>
 					</div>
 					<div class="form-check-inline">
-						<input type="checkbox" class="form-check-input" name="remindtype" value="notifications" checked>
+						<input type="checkbox" class="form-check-input" name="notificationlevel" value="notifications" checked>
 						<span class="form-check-label">Popup notifications</span>
 					</div>
 				</div>
-				<hr class="w-50">
+				<hr class="w-25">
 				<div class="text-center">
 					<buttom class="btn btn-success px-5">Update!</buttom>
 				</div>
