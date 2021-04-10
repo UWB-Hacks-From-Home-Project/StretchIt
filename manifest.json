@@ -27,6 +27,7 @@
     "storage",
     "downloads",
     "activeTab",
-    "http://*:9321/"
+    "http://*:9321/",
+    "idle"
   ]
 }
