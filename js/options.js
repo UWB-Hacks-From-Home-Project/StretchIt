@@ -1,3 +1,12 @@
+const showMsg = (htmlMsg, blockId, type) => {
+    let msgBlock = document.querySelector(`#${blockId}`);
+    console.log(msgBlock)
+    if (!msgBlock) return;
+    msgBlock.classList = [`text-${type}`];
+    msgBlock.innerHTML = htmlMsg;
+}
+
+
 let opts = ['posturefreq', 'breakfreq', 'stretchfreq', 'metrics', 'remindtype', 'notificationlevel']
 console.log("hi")
 chrome.storage.local.get(opts, (res) => {
@@ -14,6 +23,7 @@ chrome.storage.local.get(opts, (res) => {
             document.querySelector(`input[name="${opt}"]`).value = res[opt];
         }
     }
+    
 });
 
 document.querySelector("#settingsForm").onsubmit = (e) => {
@@ -24,8 +34,10 @@ document.querySelector("#settingsForm").onsubmit = (e) => {
         posturefreq: data.get("posturefreq"),
         breakfreq: data.get("breakfreq"),
         stretchfreq: data.get("stretchfreq"),
-        metrics: data.get("metrics"),
-        remindtype: data.get("remindtype"),
-        notificationlevel: data.get("notificationlevel")
-     }, () => {});
+        metrics: data.getAll("metrics"),
+        remindtype: data.getAll("remindtype"),
+        notificationlevel: data.getAll("notificationlevel")
+     }, () => {
+        showMsg("Successfully stored new settings!", "resMsg", "success");
+     });
 }
