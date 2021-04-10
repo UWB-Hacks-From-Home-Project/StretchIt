@@ -7,4 +7,4 @@ The goal of this project is to make a posture reminding and correcting app to he
 We noticed that...
 
 ### Contributions
-Created by Audrey, Alex, Vincent and Christian
+Created by Audrey, Alex, Vincent, Pedro and Christian
