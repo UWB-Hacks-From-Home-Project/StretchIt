@@ -5,8 +5,14 @@ button.addEventListener('click', () => {
       options: {
         title: 'ayo',
         message: 'wassup',
+        contextMessage: 'yeah...',
         iconUrl: 'logo128.png',
-        type: 'basic'
+        type: 'basic',
+        buttons: [{
+            title: "google?",
+        }, {
+            title: "sorry!",
+        }]
         }
     });
 });
