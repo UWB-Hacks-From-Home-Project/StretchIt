@@ -19,11 +19,13 @@ chrome.storage.local.get(opts, (res) => {
 document.querySelector("#settingsForm").onsubmit = (e) => {
     e.preventDefault();
     let data = new FormData(e.target);
-    console.log(data.getAll("remindtype"))
+
     chrome.storage.local.set({
-        remindtype: data.getAll("remindtype"),
-        posturefreq: data.get("posturefreq")
-    }, () => {
-        
-    })
+        posturefreq: data.get("posturefreq"),
+        breakfreq: data.get("breakfreq"),
+        stretchfreq: data.get("stretchfreq"),
+        metrics: data.get("metrics"),
+        remindtype: data.get("remindtype"),
+        notificationlevel: data.get("notificationlevel")
+     }, () => {});
 }
