@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener((msg) => { //Listen for messages and set th
         document.querySelector("#welcome").classList.remove("d-none");
     }
   });
-/*
+
   var Settings = {
     suggestStretch: $('#suggestStretch'),
     enableSounds: $('#sounds'),
@@ -59,4 +59,3 @@ chrome.runtime.onMessage.addListener((msg) => { //Listen for messages and set th
 function update(){
     //idk how to send a noto yet
 }
-*/
