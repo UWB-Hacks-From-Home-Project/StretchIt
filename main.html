@@ -4,16 +4,82 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/font-awesome.min.css">
 	</head>
-	<body style="width:450px;">
-		<div class="container py-2">
-			<h3 class="title text-center font-weight-bold">UWB Hacks Project</h2>
-			<p class="text-muted text-center">--- Desc ---</p>
-			<hr class="py-1 my-1">
-			<button id = "notif">sends a notif</button>
+
+	<body style="width:450px;" class="">
+		<div class="container p-2" id="welcome">
+			<p class="text-center h3">Thank you for downloading StretchIt!</p>
+			<hr class="w-25 py-0">
+			<p class="text-center lead">Helping to prevent computer usage injuries and maintain good productivity</p>
+			<hr class="w-50">
+			<p class="text-center text-info">To get started, set your desired intervals and reminders in Settings below</p>
+			<hr class="w-100 py-1 my-0">
+		</div>
+		<div class="container p-2" id="settings">
+			<p class="h3 text-center font-weight-bold">StretchIt Settings</p>
+			<hr class="w-50">
+			<form>
+				<p class="text-center font-weight-bold">
+					How often do you want to be reminded?
+				</p>
+				<p class="small w-100 text-center">
+					<span class="d-inline mr-2">Not often</span><input type="range" class="mt-1 form-control-inline w-50" min="0" max="10" name="freq"><span class="d-inline ml-2">Very often</span>
+				</p>
+				<hr class="w-50">
+				<p class="text-center mt-2 mb-1 font-weight-bold">What metrics should be used to send remiders?</p>
+				<div class="text-center">
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="typing" checked>
+						<span class="form-check-label">Track typing amount</span>
+					</div>
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="mouse" checked>
+						<span class="form-check-label">Track mouse usage</span>
+					</div>
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="browser" checked>
+						<span class="form-check-label">Track browser usage</span>
+					</div>
+				</div>
+				<p class="small text-info text-center my-1">The more of these you select, the more accurate the break/stretch/posture reminders will be.</p>
+				<hr class="w-50">
+				<p class="text-center mt-2 mb-1 font-weight-bold">What type of reminders would you like?</p>
+				<div class="text-center">
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="stretches" checked>
+						<span class="form-check-label">Stretch suggestions</span>
+					</div>
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="breaks" checked>
+						<span class="form-check-label">Break reminders</span>
+					</div>
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="posture" checked>
+						<span class="form-check-label">Posture reminders</span>
+					</div>
+				</div>
+				<hr class="w-50">
+				<p class="text-center mt-2 mb-1 font-weight-bold">How would you like to be notified?</p>
+				<div class="text-center">
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="sounds" checked>
+						<span class="form-check-label">Sounds</span>
+					</div>
+					<div class="form-check-inline">
+						<input type="checkbox" class="form-check-input" name="remindtype" value="notifications" checked>
+						<span class="form-check-label">Popup notifications</span>
+					</div>
+				</div>
+				<hr class="w-50">
+				<div class="text-center">
+					<buttom class="btn btn-success px-5">Update!</buttom>
+				</div>
+			</form>
+    </div>
+    <div>
+      <button id = "notif">sends a notif</button>
 			<button id = "alarmOn">sends a notif, every 10 seconds</button>
 			<button id = "alarmOff">turns off the previous button</button>
 		</div>
-		<script src='./js/jspdf.umd.min.js'></script>
 		<script src='./js/main.js'></script>
 		<script src='./js/jquery.min.js'></script>
 		<script src='./js/popper.min.js'></script>

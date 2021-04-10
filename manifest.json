@@ -38,6 +38,9 @@
     "activeTab",
     "notifications",
     "alarms",
-    "http://*:9321/"
+    "idle",
+    "notifications",
+    "alarms",
+    "background"
   ]
 }
