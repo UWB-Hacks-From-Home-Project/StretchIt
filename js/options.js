@@ -1,6 +1,5 @@
 const showMsg = (htmlMsg, blockId, type) => {
     let msgBlock = document.querySelector(`#${blockId}`);
-    console.log(msgBlock)
     if (!msgBlock) return;
     msgBlock.classList = [`text-${type}`];
     msgBlock.innerHTML = htmlMsg;
@@ -8,7 +7,6 @@ const showMsg = (htmlMsg, blockId, type) => {
 
 
 let opts = ['posturefreq', 'breakfreq', 'stretchfreq', 'metrics', 'remindtype']
-console.log("hi")
 chrome.storage.local.get(opts, (res) => {
     for (let opt in res) {
         if (typeof res[opt] == "object") {
@@ -16,7 +14,6 @@ chrome.storage.local.get(opts, (res) => {
                 ele.checked = false;
             });
             for (let val of res[opt]) {
-                console.log(opt, val);
                 document.querySelector(`input[name="${opt}"][value="${val}"]`).checked = true;
             }
         } else {
