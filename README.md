@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/UWB-Hacks-From-Home-Project/Project/blob/d06ec644e6af1d64dc824b07e4167d4a72b96e37/logo256.png">
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/2bfb729ae8dcc101f7c8d9de202ec62b01383b12/assets/logo256%20without%20background.png">
 </p>
 
 [![GitHub issues](https://img.shields.io/github/issues/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/issues) [![GitHub forks](https://img.shields.io/github/forks/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/network) [![GitHub stars](https://img.shields.io/github/stars/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/stargazers) [![GitHub license](https://img.shields.io/github/license/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/blob/main/COPYING) 
@@ -16,7 +16,7 @@ After installing the extension the user is prompted to a welcome page, where the
 ## Implementation Details
 This project is a Chrome extension, using Google Chrome's Extension API and Manifest 2.0 as a backend. We used the notifications/alarms API to tie system-level notifications to the extension and fire notifications based on a customizible timer system which suggests breaks and excercises based on medically sound information. We utilized Chrome's local storage to save settings and other useful information, such as time logged on the Chrome browser, amount of keystrokes typed, etc. For that, we used a content script and key press monitor to count the number of keystrokes and mouse movements and send notifications based on those metrics, if the user selects to monitor that option in settings. 
 
-We used Bootstrap to design the front-end and other pages as well a few icons using FontAwesome. Our team used Adobe Illustrator to design the logo and other graphical components of the extension, and Harmony 2.0 to animate and illustrate content such as the informational guides for the stretch poses. 
+We used Bootstrap to design the front-end and other pages as well a few icons using FontAwesome. Our team used Adobe Illustrator to design the logo and other graphical components of the extension, and Harmony 20 to animate and illustrate content such as the informational guides for the stretch poses. 
 
 ## Issues encountered
 
