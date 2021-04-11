@@ -1,3 +1,5 @@
+/*WELCOME PAGE HANDLER*/
+
 document.querySelector("#settingsBtn").onclick = () => {
     chrome.tabs.create({
         url: 'options.html'

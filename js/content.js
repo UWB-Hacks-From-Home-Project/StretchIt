@@ -1,3 +1,5 @@
+/*CONTENT SCRIPT - ACTIVITY TRACKER*/
+
 let countKey = true;
 let countMouse = true;
 

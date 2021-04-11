@@ -1,3 +1,5 @@
+/*ALARM CLOCK*/
+
 const alarmClock = {
     breakOnHandler : function(e) {
         chrome.storage.local.get(['breakfreq'], (res) => {
@@ -42,9 +44,9 @@ const alarmClock = {
     //it is necesary to have an html object with the id or else it doesn't work
     install: function() {
         chrome.storage.local.get(['remindtype'], (res) => {
-            if (res?.remindtype.includes("breaks")) alarmClock.breakOnHandler();
-            if (res?.remindtype.includes("posture")) alarmClock.postureOnHandler();
-            if (res?.remindtype.includes("water")) alarmClock.waterOnHandler();
+            if (res?.remindtype?.includes("breaks")) alarmClock.breakOnHandler();
+            if (res?.remindtype?.includes("posture")) alarmClock.postureOnHandler();
+            if (res?.remindtype?.includes("water")) alarmClock.waterOnHandler();
         });
         
     },
@@ -56,6 +58,12 @@ const alarmClock = {
     }
 };
 
+//init
+alarmClock.install();
+
+
+
+/*NOTIFICATION SYSTEM*/
 
 let silentMode = false; //Don't send notifs if in silent mode
 
@@ -121,7 +129,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 
-
+//handles buttons on notifs
 chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) => {
     if(notificationId === "postureNotif")
     {
@@ -177,10 +185,6 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
         }
     }
 });
-
-alarmClock.install();
-
-
 
 let limitScale = 1; //How often to send notifications
 
