@@ -39,6 +39,27 @@ For support, you can contact us though discord by direct messanging Amarante#338
 
 If you wish to contribute to the project please contact Amarante#3384 on Discord.
 
+### Installation
+Stretch will be uploaded to the Chrome webstore soon but for now lets do it this way!
+
+1.Download this project and unzip the folder
+
+
+2.Open up chrome and go to manage extensions (chrome://extensions/)
+<p>
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/main/assets/Setup1.png">
+</p>
+
+3.Navigate to the extracted file and highlight it. Then hit "Select Folder"
+<p>
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/main/assets/Setup2.png">
+</p>
+
+4. Now it is installed! Configure your settings and StretchIt!
+<p>
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/main/assets/welcomescreen.png">
+</p>
+
 ## License 
 
 All assets and code are under the [GNU General Public License v3.0](https://github.com/UWB-Hacks-From-Home-Project/Project/blob/main/COPYING) and in the public domain unless specified otherwise.
