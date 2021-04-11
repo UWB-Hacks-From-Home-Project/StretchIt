@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/2bfb729ae8dcc101f7c8d9de202ec62b01383b12/assets/logo256%20without%20background.png">
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/fb6015c5b14907941ac46cac9bb7f49a40c9870a/assets/logo%20without%20background.png">
 </p>
 
 [![GitHub issues](https://img.shields.io/github/issues/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/issues) [![GitHub forks](https://img.shields.io/github/forks/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/network) [![GitHub stars](https://img.shields.io/github/stars/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/stargazers) [![GitHub license](https://img.shields.io/github/license/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/blob/main/COPYING) 
