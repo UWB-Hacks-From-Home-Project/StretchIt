@@ -7,6 +7,8 @@
 
 StrechIt is a Chrome Extension designed to help users who do long or frequent computer sessions to correct their posture and prevent back pain, carpal tunnel, and strain injuries.
 
+This project is being submitted for the UWB Hacks from Home 2021: Health Track.
+
 ## Goal
 Our goal with this project is to help prevent back and carpal tunnel pain, which was greatly incresead by the pandemic need to study/work at home. We achieved this by creating StrechIt, a Chrome Extension that can remind and teach users how to be healthier during long computer seesions. 
 
