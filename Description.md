@@ -20,10 +20,11 @@ We encountered many more challenges to the ones above, but those were a few of t
 Overall, we're really proud of the interface and usability of the extension. We all feel that this extension will be really useful, and we're using it already. Such as, in writing this description, I received a well-needed notification to take a break as I had been typing a lot.
 
 ![Typing notfication](https://i.imgur.com/0GcqxDD.png)
+
 _Thank you, StretchIt_
 
 ## What we learned
 Most of the members were new to building Chrome Extensions and had to learn on the go. In addition, the team member who had built extensions previously had not developed with some of the newer Chrome API features. We all now feel pretty well experienced in extension development and plan on building more in the future.
 
 ## What's next for StretchIt: Helping prevent computer usage injuries
-In future, we're planning on adding more smart functionality to the extension. We really want this extension to be useful to real-world users, so we plan on continuing to work on the project after this hackathon. A few main feature ideas we had while developing the app but didn't have a chance to implement were: using ML to adjust the timing of the breaks to be more natural, adding a feature for the user to be able to program in breaks they take automatically or take breaks in advance as well as triggering more options from interactions with the notifications.
+Firstly, we're planning on uploading the extension to the Google Chrome Web Store so that others can start using it without needing to download the unpacked extension. Also, in future, we're planning on adding more smart functionality to the extension. We really want this extension to be useful to real-world users, so we plan on continuing to work on the project after this hackathon. A few main feature ideas we had while developing the app but didn't have a chance to implement were: using ML to adjust the timing of the breaks to be more natural, adding a feature for the user to be able to program in breaks they take automatically or take breaks in advance as well as triggering more options from interactions with the notifications.
