@@ -42,9 +42,9 @@ const alarmClock = {
     //it is necesary to have an html object with the id or else it doesn't work
     install: function() {
         chrome.storage.local.get(['remindtype'], (res) => {
-            if (res?.remindtype.includes("breaks")) alarmClock.breakOnHandler();
-            if (res?.remindtype.includes("posture")) alarmClock.postureOnHandler();
-            if (res?.remindtype.includes("water")) alarmClock.waterOnHandler();
+            if (res?.remindtype?.includes("breaks")) alarmClock.breakOnHandler();
+            if (res?.remindtype?.includes("posture")) alarmClock.postureOnHandler();
+            if (res?.remindtype?.includes("water")) alarmClock.waterOnHandler();
         });
         
     },
