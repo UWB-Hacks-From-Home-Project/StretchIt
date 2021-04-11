@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "UWB Hacks",
-  "version": "0.0.1",
+  "name": "StretchIt",
+  "version": "0.0.2",
   "description": "",
 
   "icons": {
@@ -25,7 +25,7 @@
 
   "background": {
     "scripts": ["/js/background.js"],
-    "persistent": false
+    "persistent": true
   },
 
   "permissions": [

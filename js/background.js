@@ -1,3 +1,23 @@
+/*
+//Test notification - persistent and with buttons
+let notif = chrome.notifications.create(
+    "",
+    {
+        title: 'Keep up that posture!',
+        message: 'Were you keeping good posture?',
+        iconUrl: 'logo128.png',
+        type: 'basic',
+        buttons: [
+            {title: "Yes"}, {title: "No"}
+        ],
+        requireInteraction: true
+    }
+)
+
+chrome.notifications.onButtonClicked.addListener((id, btn) => {
+    console.log(id, btn);
+    alert(btn);
+});*/
 
 
 chrome.runtime.onInstalled.addListener(() => {
