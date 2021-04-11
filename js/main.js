@@ -1,7 +1,23 @@
+let silentMode = false;
+
 document.querySelector("#silentBtn").onclick = () => {
+    let silentBtn = document.querySelector("#silentBtn");
+    silentBtn.classList.toggle("btn-primary", silentMode);
+    silentBtn.classList.toggle("btn-success", !silentMode);
+
+    silentMode = !silentMode;
+    
+    silentBtn.innerHTML = silentMode ? "Disable Silent Mode" : "Enable Silent Mode";
+
+    document.querySelector("#silentModeMsg").classList.toggle("d-none", !silentMode);
+
+    chrome.storage.local.set({
+        silent: silentMode
+    })
+
     chrome.runtime.sendMessage({
         type: "command",
-        command: "silent"
+        command: silentMode ? "silenceThee" : "thouMakeNoise"
     });
 }
 
@@ -23,9 +39,15 @@ document.querySelector("#stretches2Btn").onclick = () => {
     })
 }
 
-chrome.storage.local.get(['stretchfreq'], (res) => {
+chrome.storage.local.get(['stretchfreq', 'silent'], (res) => {
     document.querySelector("#maxTypeCount").innerHTML = 100*(5 - parseInt(res['stretchfreq']));
     document.querySelector("#maxMouseCount").innerHTML = 500*(5 - parseInt(res['stretchfreq']));
+    let silentBtn = document.querySelector("#silentBtn");
+    silentBtn.classList.toggle("btn-primary", !res['silent']);
+    silentBtn.classList.toggle("btn-success", res['silent']);
+    silentBtn.innerHTML = res['silent'] ? "Disable Silent Mode" : "Enable Silent Mode";
+    document.querySelector("#silentModeMsg").classList.toggle("d-none", !res['silent']);
+    silentMode = res['silent'];
 });
 
 chrome.runtime.onMessage.addListener(data => {
