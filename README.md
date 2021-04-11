@@ -22,7 +22,7 @@ After installing the extension the user is prompted to a welcome page, where the
 ## Future Work To Be Done
 
 ## Authors and acknowledgment
-Back-end done by [Alex Mous](https://github.com/alex-mous), [Vincent Xiao](https://github.com/vvv317) and [Christian](https://github.com/lil206chris)
+Back-end done by [Alex Mous](https://github.com/alex-mous), [Vincent Xiao](https://github.com/vvv317) and [Christian Estrella](https://github.com/lil206chris)
 
 Front-end done by [Alex Mous](https://github.com/alex-mous) and [Pedro Amarante](https://github.com/pedrodeoliamarante) 
 
