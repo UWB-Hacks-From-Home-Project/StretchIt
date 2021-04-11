@@ -1,3 +1,5 @@
+/*STRETCH PAGE HANDLER*/
+
 let handStretches = [
     {
         id: "spider",

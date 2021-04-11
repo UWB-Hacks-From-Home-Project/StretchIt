@@ -1,3 +1,5 @@
+/*OPTIONS SAVING, ETC*/
+
 const showMsg = (htmlMsg, blockId, type) => {
     let msgBlock = document.querySelector(`#${blockId}`);
     if (!msgBlock) return;

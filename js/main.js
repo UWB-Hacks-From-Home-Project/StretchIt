@@ -1,3 +1,5 @@
+/*SILENT MODE*/
+
 let silentMode = false;
 
 document.querySelector("#silentBtn").onclick = () => {
@@ -21,6 +23,8 @@ document.querySelector("#silentBtn").onclick = () => {
     });
 }
 
+/*BUTTONS*/
+
 document.querySelector("#settingsBtn").onclick = () => {
     chrome.tabs.create({
         url: "options.html"
@@ -38,6 +42,8 @@ document.querySelector("#stretches2Btn").onclick = () => {
         url: "stretch.html#desk"
     })
 }
+
+/*ACTIVITY TRACKERS/TIMERS*/
 
 chrome.storage.local.get(['stretchfreq', 'silent'], (res) => {
     document.querySelector("#maxTypeCount").innerHTML = 100*(5 - parseInt(res['stretchfreq']));
