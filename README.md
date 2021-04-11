@@ -18,9 +18,12 @@ This project is a Chrome extension, using Google Chrome's Extension API and Mani
 
 We used Bootstrap to design the front-end and other pages as well a few icons using FontAwesome. Our team used Adobe Illustrator to design the logo and other graphical components of the extension, and Harmony 20 to animate and illustrate content such as the informational guides for the stretch poses. 
 
-## Issues encountered
-
 ## Bugs
+Fixed bugs
+-Timers going into the negative
+-inveresed sliders(meaning often = not often and not often = often etc.)
+Live bugs
+-Typing metric not working
 
 ## Future Work To Be Done
 
