@@ -12,6 +12,7 @@ let keyCount = 0;
 document.onkeypress = () => {
     if (countKey) {
         keyCount++;
+        console.log(keyCount)
         if (keyCount > 10) {
             chrome.runtime.sendMessage({
                 type: "typing",
