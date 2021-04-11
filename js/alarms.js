@@ -10,10 +10,10 @@ var alarmClock = {
 
     //it is necesary to have an html object with the id or else it doesn't work
     setup: function() {
-        var button = document.getElementById('alarmOn');
+        /*var button = document.getElementById('alarmOn');
         button.addEventListener('click',  alarmClock.onHandler);
         var button = document.getElementById('alarmOff');
-        button.addEventListener('click',  alarmClock.offHandler);
+        button.addEventListener('click',  alarmClock.offHandler);*/
     }
 };
 
