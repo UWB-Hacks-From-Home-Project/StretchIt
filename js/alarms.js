@@ -1,6 +1,4 @@
 var alarmClock = {
-
-
     breakOnHandler : function(e) {
         chrome.storage.local.get(['breakfreq'], (res) => {
             chrome.alarms.create("breakAlarm", {delayInMinutes: 0/*(parseInt(res['breakfreq']) + parseInt(1))*/, periodInMinutes: (parseInt(res['breakfreq']) + parseInt(1))}), 
