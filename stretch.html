@@ -9,9 +9,14 @@
 
 	<body>
 		<div class="container p-2" id="main">
-			<p class="text-center h2">StretchIt</p>
+			<p class="text-center h2">StretchIt: Stretches</p>
 			<p class="text-center lead">Do some stretches to help relieve stress and prevent stress-related injuries</p>
-			<hr class="w-25">
+            <hr class="w-25">
+            <div class="text-center my-3">
+                <button class="btn btn-sm btn-warning mx-5 mx-md-2 my-1" id="prevBtn"></button>
+                <button class="btn btn-sm btn-warning mx-5 mx-md-2 my-1 " id="nextBtn"></button>
+            </div>
+			<hr class="w-75">
             <p class="text-center h3 my-3" id="title"></p>
 			<div class="text-center">
 				<img id="gifContainer" src="">
@@ -45,8 +50,7 @@
                     </ol>
                     <div class="col-md-2 col-1"></div>
                 </div>
-                <div class="mt-3 mb-2 pt-4 pb-2"></div>
-                <hr class="w-50 my-1">
+                <hr class="w-50 my-1 mb-5">
 			</div>
             <div class="d-none" id="shake">
 				<div class="row">
@@ -68,8 +72,7 @@
                     </ol>
                     <div class="col-md-2 col-1"></div>
                 </div>
-                <div class="mt-3 mb-2 pt-5 pb-2"></div>
-                <hr class="my-1 w-50">
+                <hr class="my-1 mb-5 w-50">
             </div>
             <div class="d-none" id="stretcharmstrong">
                 <div class="row">
@@ -97,7 +100,7 @@
                     </ol>
                     <div class="col-md-2 col-1"></div>
                 </div>
-                <hr class="my-1 w-50">
+                <hr class="my-1 mb-5 w-50">
 			</div>
             <div class="d-none" id="forward">
                 <div class="row">
@@ -202,10 +205,6 @@
                 </div>
                 <hr class="my-1 w-50">
 			</div>
-            <div class="text-center my-3">
-                <button class="btn btn-warning mx-5 mx-md-2 my-1" id="prevBtn"></button>
-                <button class="btn btn-warning mx-5 mx-md-2 my-1 " id="nextBtn"></button>
-            </div>
 		</div>
 
 		<script src='./js/jquery.min.js'></script>
