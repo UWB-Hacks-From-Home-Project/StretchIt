@@ -214,8 +214,8 @@ chrome.runtime.onMessage.addListener(data => {
             alarmClock.install();
         } else if (data.command = "sendStats") {
             chrome.runtime.sendMessage({
-                absMouseCount,
-                absKeyCount
+                mouseCount,
+                keyCount
             })
         }
     }
