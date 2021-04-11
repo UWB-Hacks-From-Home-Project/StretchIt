@@ -92,7 +92,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) => {
     if(notificationId === "postureNotif")
     {
-        chrome.storage.local.get(['posturefreq'], () => {
+        chrome.storage.local.get(['posturefreq'], (res) => {
             let val = 5 - parseInt(res['posturefreq']);
             if(buttonIndex === 0)
             {
