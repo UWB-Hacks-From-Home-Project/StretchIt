@@ -1,29 +1,50 @@
-/*
-//Test notification - persistent and with buttons
-let notif = chrome.notifications.create(
-    "",
-    {
-        title: 'Keep up that posture!',
-        message: 'Were you keeping good posture?',
-        iconUrl: 'logo128.png',
-        type: 'basic',
-        buttons: [
-            {title: "Yes"}, {title: "No"}
-        ],
-        requireInteraction: true
-    }
-)
+const alarmClock = {
+    breakOnHandler : function(e) {
+        chrome.storage.local.get(['breakfreq'], (res) => {
+            chrome.alarms.create("breakAlarm", {
+              delayInMinutes: 0/*10*(res['breakfreq'] + 1)*/,
+              periodInMinutes: 10*(parseInt(res['breakfreq']) + 1)
+            });
+            console.log("break alarm created with length " + 10*(parseInt(res['breakfreq']) + 1) + "!")
+        })
+    },
 
-chrome.notifications.onButtonClicked.addListener((id, btn) => {
-    console.log(id, btn);
-    alert(btn);
-});*/
+    breakOffHandler : function(e) {
+        chrome.alarms.clear("breakAlarm");
+    },
+
+    postureOnHandler : function(e){
+        chrome.storage.local.get(['posturefreq'], (res) => {
+            chrome.alarms.create("postureAlarm", {
+              delayInMinutes: 0/*10*(res['posturefreq'] + 1)*/,
+              periodInMinutes: 10*(parseInt(res['posturefreq']) + 1)
+            });
+            console.log("posture alarm created with length " + 10*(parseInt(res['posturefreq']) + 1) + "!")
+        })
+    },
+
+    postureOffHandler : function(e){
+        chrome.alarms.clear("postureAlarm");
+    },
+
+    //it is necesary to have an html object with the id or else it doesn't work
+    setup: function() {
+        alarmClock.breakOnHandler();
+        alarmClock.postureOnHandler();
+    },
+
+    uninstall: () => {
+        alarmClock.breakOffHandler();
+        alarmClock.postureOffHandler();
+    }
+};
+
 
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.tabs.create({
-    url: "welcome.html"
-  });
+    chrome.tabs.create({
+        url: "welcome.html"
+    });
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
@@ -32,10 +53,16 @@ chrome.alarms.onAlarm.addListener((alarm) => {
         var notificationID = "breakNotif";
         var notifMessage = {
             title: 'Take a break!',
-            message: 'It\'s been too long since your last break!',
+            message: 'It\'s been too long since your last break! Would you like to do some stretches?',
             contextMessage: 'From StretchIt',
             iconUrl: 'logo128.png',
-            type: 'basic'
+            type: 'basic',
+            buttons: [{
+                title: "Yes",
+            }, {
+                title: "No",
+            }],
+            requireInteraction: true
         };
         chrome.notifications.create(notificationID, notifMessage);
     }
@@ -44,7 +71,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     {
         var notificationID = "postureNotif";
         var notifMessage = {
-            title: 'Fix your posture!',
+            title: 'Keep up your posture!',
             message: 'It\'s a good time to do some posture exercises now. Have you had good posture?',
             contextMessage: 'From StretchIt',
             iconUrl: 'logo128.png',
@@ -53,50 +80,106 @@ chrome.alarms.onAlarm.addListener((alarm) => {
                 title: "Yes",
             }, {
                 title: "No",
-            }]
+            }],
+            requireInteraction: true
         };
         chrome.notifications.create(notificationID, notifMessage);
     }
 });
 
-chrome.runtime.onMessage.addListener(data => {
-    if (data.type === 'notification') {
-      chrome.notifications.create('testNotif', data.options)
-    }
-  });
+
 
 chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) => {
-    if(notificationId === "testNotif")
-    {
-        if(buttonIndex === 0)
-        {
-            window.open("https://www.google.com");
-        }
-        else if(buttonIndex === 1)
-        {
-            alert("sorry!");
-        }
-    }
-
     if(notificationId === "postureNotif")
     {
-        if(buttonIndex === 0)
-        {
-            chrome.storage.local.get(['posturefreq'], (res) => {
-                chrome.local.storage.set(
-                    {posturefreq: (parseInt(res['posturefreq']) + parseInt(1))}, 
-                    () => alert((parseInt(res['posturefreq']) + parseInt(1)))
-                )
+        chrome.storage.local.get(['posturefreq'], (res) => {
+            let val = 5 - parseInt(res['posturefreq']);
+            if(buttonIndex === 0)
+            {
+                val++;
+            }
+            else if(buttonIndex === 1)
+            {
+                val--;
+            }
+            val *= 10;
+            chrome.storage.local.set(
+                {
+                    posturefreq: Math.max(1, Math.min(5, val))
+                }, 
+                () => {
+                    alarmClock.uninstall();
+                    alarmClock.setup();
+                }
+            );
+        });
+    }
+    else if (notificationId == "stretchNotif") {
+        if (buttonIndex == 0) {
+            chrome.tabs.create({
+                url: "stretch.html"
             });
-        }
-        else if(buttonIndex === 1)
-        {
-            chrome.storage.local.get(['posturefreq'], (res) => {
-                chrome.local.storage.set(
-                    {posturefreq: (parseInt(res['posturefreq']) - parseInt(1))}, 
-                    () => alert((parseInt(res['posturefreq']) - parseInt(1)))
-                )
-            });
+        } else {
+            window.setTimeout(() => { //Remind user in 5 mins if they say remind me later
+                chrome.notifications.create(
+                  "stretchNotif",
+                  {
+                      title: `Reminder: It's time for a stretch!`,
+                      message: 'Would you like to do one now?',
+                      iconUrl: 'logo128.png',
+                      type: 'basic',
+                      buttons: [
+                          {
+                            title: "Sure"
+                          },
+                          {
+                            title: "No, remind me later"
+                          }
+                      ],
+                      requireInteraction: true
+                  }
+                );
+            }, 5*60*1000);
         }
     }
 });
+
+
+chrome.notifications.onButtonClicked.addListener((id, btn) => {
+  
+});
+
+alarmClock.setup();
+
+
+
+//Handle commands/messages from content script and extension
+chrome.runtime.onMessage.addListener(data => {
+    if (data.type == "typing" || data.type == "mousing") {
+        createStretchNotif(data.type);
+    } else if (data.type == "command") {
+        console.log("oooo a command!", data.command);
+    }
+});
+
+
+const createStretchNotif = (type) => {
+    chrome.notifications.create(
+      "stretchNotif",
+      {
+          title: `You've been ${type} a lot! It's time for a stretch`,
+          message: 'Would you like to do one now?',
+          iconUrl: 'logo128.png',
+          type: 'basic',
+          buttons: [
+              {
+                title: "Sure"
+              },
+              {
+                title: "No, remind me later"
+              }
+          ],
+          requireInteraction: true
+      }
+    );
+}

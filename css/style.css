@@ -6,3 +6,42 @@ html, body, div {
 hr {
     border-top: 1px solid rgba(255,255,255,.1) !important;
 }
+
+.btn-success {
+    background-color: #c956a2 !important;
+    border-color: #c956a2 !important;
+}
+
+.btn-success:hover {
+    background-color: #e861bb !important;
+}
+
+.btn-success:focus {
+    box-shadow: 0 0 0 0.2rem #a7488780 !important;
+}
+
+.btn-warning {
+    background-color: #71d9db !important;
+    border-color: #71d9db !important;
+}
+
+.btn-warning:hover {
+    background-color: #80fdff !important;
+}
+
+.btn-warning:focus {
+    box-shadow: 0 0 0 0.2rem #71d9db !important;
+}
+
+.btn-primary {
+    background-color: #8ba1fe !important;
+    border-color: #8ba1fe !important;
+}
+
+.btn-primary:hover {
+    background-color: #a4b4ff !important;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem #8ba1fe !important;
+}

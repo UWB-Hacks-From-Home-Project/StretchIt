@@ -7,7 +7,7 @@ const showMsg = (htmlMsg, blockId, type) => {
 }
 
 
-let opts = ['posturefreq', 'breakfreq', 'stretchfreq', 'metrics', 'remindtype', 'notificationlevel']
+let opts = ['posturefreq', 'breakfreq', 'stretchfreq', 'metrics', 'remindtype']
 console.log("hi")
 chrome.storage.local.get(opts, (res) => {
     for (let opt in res) {
@@ -35,9 +35,8 @@ document.querySelector("#settingsForm").onsubmit = (e) => {
         breakfreq: data.get("breakfreq"),
         stretchfreq: data.get("stretchfreq"),
         metrics: data.getAll("metrics"),
-        remindtype: data.getAll("remindtype"),
-        notificationlevel: data.getAll("notificationlevel")
+        remindtype: data.getAll("remindtype")
      }, () => {
-        showMsg("Successfully stored new settings!", "resMsg", "success");
+        showMsg("<b>Successfully stored new settings!</b> You can now exit out of this page.", "resMsg", "success");
      });
 }
