@@ -15,7 +15,30 @@
 			<hr class="w-25 py-0">
 			<p class="text-center lead">Helping to prevent computer usage injuries and maintain good productivity</p>
 			<hr class="w-50">
-			
+			<p class="h4 text-center">Typing/Mousing Metrics</p>
+			<p class="text-center">
+				<div class="text-center font-weight-bold">Current typing character count</div>
+				<div class="text-center"><span id="currTypeCount">N/A</span> out of maximum <span id="maxTypeCount"></span> before next break</div>
+			</p>
+			<p class="text-center">
+				<div class="text-center font-weight-bold">Current mouse movement statistic</div>
+				<div class="text-center"><span id="currMouseCount">N/A</span> out of maximum <span id="maxMouseCount"></span> before next break</div>
+			</p>
+			<hr class="w-50">
+			<p class="h4 text-center">Timers</p>
+			<p class="text-center">
+				<div class="text-center font-weight-bold">Breaks</div>
+				<div class="text-center">Next reminder in <span id="breakReminderTimer">N/A</span></div>
+			</p>
+			<p class="text-center">
+				<div class="text-center font-weight-bold">Posture</div>
+				<div class="text-center">Next reminder in <span id="postureReminderTimer">N/A</span></div>
+			</p>
+			<p class="text-center">
+				<div class="text-center font-weight-bold">Water Breaks</div>
+				<div class="text-center">Next reminder in <span id="waterReminderTimer">N/A</span></div>
+			</p>
+			<hr class="w-75">
 			<div class="text-center">
 				<button class="btn btn-success my-1 mx-5" id="silentBtn">Enable Silent Mode</button>
 				<div>
@@ -24,15 +47,6 @@
 				</div>
 				<button class="btn btn-warning my-1 mx-5" id="settingsBtn">Open Settings</button>
 			</div>
-
-			<p>break reminder timer</p>
-			<p id = "breakReminderTimer"></p>
-
-			<p>posture reminder timer</p>
-			<p id = "postureReminderTimer"></p>
-
-			<p>water reminder timer</p>
-			<p id = "waterReminderTimer"></p>
 		</div>
 		
 

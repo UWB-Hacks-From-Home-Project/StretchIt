@@ -17,8 +17,8 @@ var timing = setInterval(
             document.getElementById("breakReminderTimer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 
             if (timeLeft <= 0) {
-            clearInterval(timing);
-            document.getElementById("countdown").innerHTML = "It's over";
+                clearInterval(timing);
+                document.getElementById("countdown").innerHTML = "It's over";
             }
         });
     }, 1000

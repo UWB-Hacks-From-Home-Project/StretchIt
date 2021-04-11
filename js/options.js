@@ -36,7 +36,12 @@ document.querySelector("#settingsForm").onsubmit = (e) => {
         stretchfreq: data.get("stretchfreq"),
         metrics: data.getAll("metrics"),
         remindtype: data.getAll("remindtype")
-     }, () => {
+    }, () => {
         showMsg("<b>Successfully stored new settings!</b> You can now exit out of this page.", "resMsg", "success");
-     });
+    });
+
+    chrome.runtime.sendMessage({
+        type: "command",
+        command: "settingsUpdate"
+    })
 }
