@@ -69,7 +69,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
             title: 'Take a break!',
             message: 'It\'s been too long since your last break! Would you like to do some stretches?',
             contextMessage: 'From StretchIt',
-            iconUrl: 'logo128.png',
+            iconUrl: './assets/logo128.png',
             type: 'basic',
             buttons: [{
                 title: "Yes",
@@ -88,7 +88,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
             title: 'Keep up your posture!',
             message: 'It\'s a good time to do some posture exercises now. Have you had good posture?',
             contextMessage: 'From StretchIt',
-            iconUrl: 'logo128.png',
+            iconUrl: './assets/logo128.png',
             type: 'basic',
             buttons: [{
                 title: "Yes",
@@ -107,7 +107,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
             title: 'Drink Water!',
             message: 'Always remember to drink 3-4 liters of water a day!',
             contextMessage: 'From StretchIt',
-            iconUrl: 'logo128.png',
+            iconUrl: './assets/logo128.png.png',
             type: 'basic',
             requireInteraction: true
         };
@@ -154,7 +154,7 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
                   {
                       title: `Reminder: It's time for a stretch!`,
                       message: 'Would you like to do one now?',
-                      iconUrl: 'logo128.png',
+                      iconUrl: './assets/logo128.png',
                       type: 'basic',
                       buttons: [
                           {
@@ -197,7 +197,7 @@ const createStretchNotif = (type) => {
       {
           title: `You've been ${type} a lot! It's time for a stretch`,
           message: 'Would you like to do one now?',
-          iconUrl: 'logo128.png',
+          iconUrl: './assets/logo128.png',
           type: 'basic',
           buttons: [
               {
