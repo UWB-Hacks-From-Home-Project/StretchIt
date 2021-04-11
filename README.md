@@ -5,7 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/issues) [![GitHub forks](https://img.shields.io/github/forks/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/network) [![GitHub stars](https://img.shields.io/github/stars/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/stargazers) [![GitHub license](https://img.shields.io/github/license/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/blob/main/COPYING) 
 
 
-Strech It is a Chrome Extension designed to help users that do long computer seesions correct their posture and prevent back and carpal tunnel pain. 
+StrechIt is a Chrome Extension designed to help users that do long computer seesions correct their posture and prevent back and carpal tunnel pain. 
 
 ## Goal
 Our goal with this project is to help prevent back and carpall tunnel pain, which was greatly incresead by the pandemic need to study/work at home. We achieved this by creating StrechIt, a Chrome Extension that can remind and teach users how to be healthier during long computer seesions. 
