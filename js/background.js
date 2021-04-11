@@ -27,15 +27,29 @@ const alarmClock = {
         chrome.alarms.clear("postureAlarm");
     },
 
+    waterOnHandler : function(e){
+        chrome.alarms.create("waterAlarm", {
+            delayInMinutes: 0,
+            periodInMinutes: 30
+        });
+        console.log("water alarm created with length 30!")
+    },
+
+    waterOffHandler : function(e){
+        chrome.alarms.clear("waterAlarm");
+    },
+
     //it is necesary to have an html object with the id or else it doesn't work
     setup: function() {
         alarmClock.breakOnHandler();
         alarmClock.postureOnHandler();
+        alarmClock.waterOnHandler();
     },
 
     uninstall: () => {
         alarmClock.breakOffHandler();
         alarmClock.postureOffHandler();
+        alarmClock.waterOffHandler();
     }
 };
 
@@ -81,6 +95,20 @@ chrome.alarms.onAlarm.addListener((alarm) => {
             }, {
                 title: "No",
             }],
+            requireInteraction: true
+        };
+        chrome.notifications.create(notificationID, notifMessage);
+    }
+
+    if(alarm.name === "waterAlarm")
+    {
+        var notificationID = "waterNotif";
+        var notifMessage = {
+            title: 'Drink Water!',
+            message: 'Always remember to drink 3-4 liters of water a day!',
+            contextMessage: 'From StretchIt',
+            iconUrl: 'logo128.png',
+            type: 'basic',
             requireInteraction: true
         };
         chrome.notifications.create(notificationID, notifMessage);
