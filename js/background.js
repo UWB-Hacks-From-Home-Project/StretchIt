@@ -29,7 +29,7 @@ const alarmClock = {
 
     waterOnHandler : function(e){
         chrome.alarms.create("waterAlarm", {
-            delayInMinutes: 34,
+            delayInMinutes: 1,
             periodInMinutes: 30
         });
         console.log("water alarm created with length 30!")
