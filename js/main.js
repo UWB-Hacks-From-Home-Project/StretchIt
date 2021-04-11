@@ -1,22 +1,3 @@
-//Update UI/
-/*chrome.runtime.onMessage.addListener((msg) => { //Listen for messages and set the data accordingly
-    console.log(msg);
-    if (msg.type == "key") {
-        console.log("typing",  msg.value);
-    } else if (msg.type == "mouse") {
-        console.log("mouse", msg.value);
-    }
-});
-
-chrome.tabs.query({ //Request typing count and others
-    active: true,
-    currentWindow: true
-}, (tabs) => {
-    if (!tabs.length) return;
-    chrome.tabs.sendMessage(tabs[0].id, "");
-});
-*/
-
 document.querySelector("#silentBtn").onclick = () => {
     chrome.runtime.sendMessage({
         type: "command",
@@ -41,3 +22,20 @@ document.querySelector("#stretches2Btn").onclick = () => {
         url: "stretch.html#desk"
     })
 }
+
+chrome.storage.local.get(['stretchfreq'], (res) => {
+    document.querySelector("#maxTypeCount").innerHTML = 100*(5 - parseInt(res['stretchfreq']));
+    document.querySelector("#maxMouseCount").innerHTML = 500*(5 - parseInt(res['stretchfreq']));
+});
+
+chrome.runtime.onMessage.addListener(data => {
+    if (data.absMouseCount != undefined && data.absKeyCount != undefined) {
+        document.querySelector("#currTypeCount").innerHTML = data.absKeyCount;
+        document.querySelector("#currMouseCount").innerHTML = data.absMouseCount;
+    }
+});
+
+chrome.runtime.sendMessage({
+    type: "command",
+    command: "sendStats"
+})
