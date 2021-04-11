@@ -99,6 +99,20 @@ chrome.alarms.onAlarm.addListener((alarm) => {
         };
         chrome.notifications.create(notificationID, notifMessage);
     }
+
+    if(alarm.name === "waterAlarm")
+    {
+        var notificationID = "waterNotif";
+        var notifMessage = {
+            title: 'Drink Water!',
+            message: 'Always remember to drink 3-4 liters of water a day!',
+            contextMessage: 'From StretchIt',
+            iconUrl: 'logo128.png',
+            type: 'basic',
+            requireInteraction: true
+        };
+        chrome.notifications.create(notificationID, notifMessage);
+    }
 });
 
 
