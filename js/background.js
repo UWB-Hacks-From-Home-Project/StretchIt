@@ -27,15 +27,29 @@ const alarmClock = {
         chrome.alarms.clear("postureAlarm");
     },
 
+    waterOnHandler : function(e){
+        chrome.alarms.create("waterAlarm", {
+            delayInMinutes: 0,
+            periodInMinutes: 30
+        });
+        console.log("water alarm created with length 30!")
+    },
+
+    waterOffHandler : function(e){
+        chrome.alarms.clear("waterAlarm");
+    },
+
     //it is necesary to have an html object with the id or else it doesn't work
     setup: function() {
         alarmClock.breakOnHandler();
         alarmClock.postureOnHandler();
+        alarmClock.waterOnHandler();
     },
 
     uninstall: () => {
         alarmClock.breakOffHandler();
         alarmClock.postureOffHandler();
+        alarmClock.waterOffHandler();
     }
 };
 
