@@ -20,10 +20,10 @@ We used Bootstrap to design the front-end and other pages as well a few icons us
 
 ## Bugs
 Fixed bugs
--Timers going into the negative
--inveresed sliders(meaning often = not often and not often = often etc.)
+- Timers going into the negative
+- inveresed sliders(meaning often = not often and not often = often etc.)
 Live bugs
--Typing metric not working
+- Typing metric not working
 
 ## Future Work To Be Done
 
