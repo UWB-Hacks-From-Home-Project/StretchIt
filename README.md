@@ -27,6 +27,9 @@ Fixed bugs
 - Typing metric not working fully
 
 ## Future Work To Be Done
+- Publish the extension to the Google Chrome Web Store and getting it certified by Google
+- Add machine-learning based smart functionality to the extension that dynamically changes the times between breaks and staggers them to make sure the user feels the extension understands their workflow. 
+- Allow the user to program in breaks that they would automatically take – for example a lunch break or bathroom break – or to take breaks in advance as to ensure the best user experience. 
 
 ## Authors and acknowledgment
 Back-end done by [Alex Mous](https://github.com/alex-mous), [Vincent Xiao](https://github.com/vvv317) and [Christian Estrella](https://github.com/lil206chris)
