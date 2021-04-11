@@ -2,7 +2,7 @@ const alarmClock = {
     breakOnHandler : function(e) {
         chrome.storage.local.get(['breakfreq'], (res) => {
             chrome.alarms.create("breakAlarm", {
-              delayInMinutes: 1/*10*(res['breakfreq'] + 1)*/,
+              delayInMinutes: 10*(5 - parseInt(res['breakfreq'])),
               periodInMinutes: 10*(5 - parseInt(res['breakfreq']))
             });
             console.log("break alarm created with length " + 10*(parseInt(res['breakfreq'])) + "!")
@@ -16,7 +16,7 @@ const alarmClock = {
     postureOnHandler : function(e){
         chrome.storage.local.get(['posturefreq'], (res) => {
             chrome.alarms.create("postureAlarm", {
-              delayInMinutes: 0/*10*(res['posturefreq'] + 1)*/,
+              delayInMinutes: 2+10*(5 - parseInt(res['posturefreq'])),
               periodInMinutes: 10*(5 - parseInt(res['posturefreq']))
             });
             console.log("posture alarm created with length " + 10*(5 - parseInt(res['posturefreq'])) + "!")
@@ -29,7 +29,7 @@ const alarmClock = {
 
     waterOnHandler : function(e){
         chrome.alarms.create("waterAlarm", {
-            delayInMinutes: 1,
+            delayInMinutes: 34,
             periodInMinutes: 30
         });
         console.log("water alarm created with length 30!")
@@ -42,9 +42,9 @@ const alarmClock = {
     //it is necesary to have an html object with the id or else it doesn't work
     install: function() {
         chrome.storage.local.get(['remindtype'], (res) => {
-            if (res.remindtype.includes("breaks")) alarmClock.breakOnHandler();
-            if (res.remindtype.includes("posture")) alarmClock.postureOnHandler();
-            if (res.remindtype.includes("water")) alarmClock.waterOnHandler();
+            if (res?.remindtype.includes("breaks")) alarmClock.breakOnHandler();
+            if (res?.remindtype.includes("posture")) alarmClock.postureOnHandler();
+            if (res?.remindtype.includes("water")) alarmClock.waterOnHandler();
         });
         
     },
