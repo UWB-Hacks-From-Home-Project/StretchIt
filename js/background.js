@@ -3,9 +3,9 @@ const alarmClock = {
         chrome.storage.local.get(['breakfreq'], (res) => {
             chrome.alarms.create("breakAlarm", {
               delayInMinutes: 1/*10*(res['breakfreq'] + 1)*/,
-              periodInMinutes: 10*(parseInt(res['breakfreq']) + 1)
+              periodInMinutes: 10*(5 - parseInt(res['breakfreq']))
             });
-            console.log("break alarm created with length " + 10*(parseInt(res['breakfreq']) + 1) + "!")
+            console.log("break alarm created with length " + 10*(parseInt(res['breakfreq'])) + "!")
         })
     },
 
@@ -16,10 +16,10 @@ const alarmClock = {
     postureOnHandler : function(e){
         chrome.storage.local.get(['posturefreq'], (res) => {
             chrome.alarms.create("postureAlarm", {
-              delayInMinutes: 1/*10*(res['posturefreq'] + 1)*/,
-              periodInMinutes: 10*(parseInt(res['posturefreq']) + 1)
+              delayInMinutes: 0/*10*(res['posturefreq'] + 1)*/,
+              periodInMinutes: 10*(5 - parseInt(res['posturefreq']))
             });
-            console.log("posture alarm created with length " + 10*(parseInt(res['posturefreq']) + 1) + "!")
+            console.log("posture alarm created with length " + 10*(5 - parseInt(res['posturefreq'])) + "!")
         })
     },
 
@@ -57,6 +57,7 @@ const alarmClock = {
 };
 
 
+let silentMode = false; //Don't send notifs if in silent mode
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.tabs.create({
@@ -65,6 +66,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
+    if (silentMode) return;
     if(alarm.name === "breakAlarm")
     {
         var notificationID = "breakNotif";
@@ -124,33 +126,34 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
     if(notificationId === "postureNotif")
     {
         chrome.storage.local.get(['posturefreq'], (res) => {
-            let val = 5 - parseInt(res['posturefreq']);
+            let val = parseInt(res['posturefreq']);
             if(buttonIndex === 0)
-            {
-                val++;
-            }
-            else if(buttonIndex === 1)
             {
                 val--;
             }
-            val *= 10;
+            else if(buttonIndex === 1)
+            {
+                val++;
+            }
             chrome.storage.local.set(
                 {
-                    posturefreq: Math.max(1, Math.min(5, val))
+                    posturefreq: Math.max(0, Math.min(4, val))
                 }, 
                 () => {
-                    alarmClock.uninstall();
-                    alarmClock.install();
+                    alarmClock.postureOffHandler();
+                    window.setTimeout(() => {
+                        alarmClock.postureOnHandler();
+                    }, 250);
                 }
             );
         });
     }
     else if (notificationId == "stretchNotif" || notificationId == "breakNotif") {
-        if (buttonIndex == 0) {
+        if (buttonIndex === 0) {
             chrome.tabs.create({
                 url: `stretch.html${ (notificationId == "stretchNotif") ? "" : "#desk" }`
             });
-        } else {
+        } else if (buttonIndex === 1) {
             window.setTimeout(() => { //Remind user in 5 mins if they say remind me later
                 chrome.notifications.create(
                     notificationId,
@@ -190,17 +193,19 @@ let mouseCount = 0;
 let keyCount = 0;
 let absMouseCount = 0;
 let absKeyCount = 0;
+
+
 //Handle commands/messages from content script and extension
 chrome.runtime.onMessage.addListener(data => {
     console.log("Message", data);
-    if (data.type == "typing") {
+    if (data.type == "typing" && !silentMode) {
         keyCount += data.newCount;
         absKeyCount += data.newCount;
         if (keyCount > limitScale*100) {
             createStretchNotif(data.type);
             keyCount = 0;
         }
-    } else if (data.type == "mousing") {
+    } else if (data.type == "mousing" && !silentMode) {
         mouseCount += data.newCount;
         absMouseCount += data.newCount;
         if (mouseCount > limitScale*500) {
@@ -208,15 +213,20 @@ chrome.runtime.onMessage.addListener(data => {
             mouseCount = 0;
         }
     } else if (data.type == "command") {
-        console.log("oooo a command!", data.command);
         if (data.command == "settingsUpdate") {
             alarmClock.uninstall();
             alarmClock.install();
-        } else if (data.command = "sendStats") {
+        } else if (data.command == "sendStats") {
             chrome.runtime.sendMessage({
                 mouseCount,
                 keyCount
             })
+        } else if (data.command == "silenceThee") {
+            console.log("Silent mode");
+            silentMode = true;
+        } else if (data.command == "thouMakeNoise") {
+            console.log("Un-silent mode");
+            silentMode = false;
         }
     }
 });

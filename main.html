@@ -14,7 +14,20 @@
 			<p class="text-center h3">StretchIt</p>
 			<hr class="w-25 py-0">
 			<p class="text-center lead">Helping to prevent computer usage injuries and maintain good productivity</p>
-			<hr class="w-50">
+			<hr class="w-75">
+			<div class="text-center">
+				<button class="btn btn-success my-1 mx-5" id="silentBtn">Enable Silent Mode</button>
+				<div>
+					<button class="btn btn-success my-1 mr-1" id="stretches1Btn">See Hand Stretches</button>
+					<button class="btn btn-success my-1 mr-1" id="stretches2Btn">See Body Stretches</button>
+				</div>
+				<button class="btn btn-warning my-1 mx-5" id="settingsBtn">Open Settings</button>
+			</div>
+			<hr class="w-75">
+			<div class="my-2 text-center font-weight-bold text-info d-none" id="silentModeMsg">
+				<i class="fa fa-bed mr-2"></i>Silent mode is active
+				<hr class="w-75">
+			</div>
 			<p class="h4 text-center">Typing/Mousing Metrics</p>
 			<p class="text-center">
 				<div class="text-center font-weight-bold">Current typing character count</div>
@@ -39,14 +52,6 @@
 				<div class="text-center">Next reminder in <span id="waterReminderTimer">N/A</span></div>
 			</p>
 			<hr class="w-75">
-			<div class="text-center">
-				<button class="btn btn-success my-1 mx-5" id="silentBtn">Enable Silent Mode</button>
-				<div>
-					<button class="btn btn-success my-1 mr-1" id="stretches1Btn">See Hand Stretches</button>
-					<button class="btn btn-success my-1 mr-1" id="stretches2Btn">See Body Stretches</button>
-				</div>
-				<button class="btn btn-warning my-1 mx-5" id="settingsBtn">Open Settings</button>
-			</div>
 		</div>
 		
 
