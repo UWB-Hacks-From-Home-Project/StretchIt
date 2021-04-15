@@ -5,6 +5,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/issues) [![GitHub forks](https://img.shields.io/github/forks/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/network) [![GitHub stars](https://img.shields.io/github/stars/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/stargazers) [![GitHub license](https://img.shields.io/github/license/UWB-Hacks-From-Home-Project/Project)](https://github.com/UWB-Hacks-From-Home-Project/Project/blob/main/COPYING) 
 
 
+-This is v1.01, the version submitted to the UWB Hacks from Home hackathon. Any later edits do not represent the work we submitted.
+
 StrechIt is a Chrome Extension designed to help users who do long or frequent computer sessions to correct their posture and prevent back pain, carpal tunnel, and strain injuries.
 
 This project is being submitted for the UWB Hacks from Home 2021: Health Track.
