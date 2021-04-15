@@ -3,21 +3,21 @@
 let handStretches = [
     {
         id: "spider",
-        name: "Spiders doing pushups on a mirror",
-        still: "/assets/carpal tunnel exercises/Spiders doing pushups on a mirror frames/1.gif",
-        live: "/assets/carpal tunnel exercises/Spiders doing pushups on a mirror.gif"
+        name: "Spiders Doing Pushups on a Mirror",
+        still: "/assets/exercises_carpaltunnel/spider/1.gif",
+        live: "/assets/exercises_carpaltunnel/spider.gif"
     },
     {
         id: "shake",
         name: "Hand Shakes",
-        still: "/assets/carpal tunnel exercises/shake frames/1.gif",
-        live: "/assets/carpal tunnel exercises/Shake.gif"
+        still: "/assets/exercises_carpaltunnel/shake/1.gif",
+        live: "/assets/exercises_carpaltunnel/shake.gif"
     },
     {
         id: "stretcharmstrong",
         name: "Stretch Armstrong",
-        still: "/assets/carpal tunnel exercises/stretch armstrong frames/1.gif",
-        live: "/assets/carpal tunnel exercises/Stretch armstrong.gif"
+        still: "/assets/exercises_carpaltunnel/stretch_armstrong/1.gif",
+        live: "/assets/exercises_carpaltunnel/stretch_armstrong.gif"
     }
 ];
 
@@ -25,26 +25,26 @@ let deskStretches = [
     {
         id: "forward",
         name: "Forward Stretch",
-        still: "/assets/desk exercises/Forward stretch frames/1.gif",
-        live: "/assets/desk exercises/Forward stretch.gif"
+        still: "/assets/exercises_desk/forward_stretch/1.gif",
+        live: "/assets/exercises_desk/forward_stretch.gif"
     },
     {
         id: "overhead",
         name: "Overhead Reach",
-        still: "/assets/desk exercises/Overhead reach frames/1.gif",
-        live: "/assets/desk exercises/Overhead reach.gif"
+        still: "/assets/exercises_desk/overhead_reach/1.gif",
+        live: "/assets/exercises_desk/overhead_reach.gif"
     },
     {
         id: "triceps",
         name: "Triceps Stretches",
-        still: "/assets/desk exercises/Triceps stretches frames/1.gif",
-        live: "/assets/desk exercises/Triceps stretches.gif"
+        still: "/assets/exercises_desk/triceps_stretch/1.gif",
+        live: "/assets/exercises_desk/triceps_stretch.gif"
     },
     {
         id: "upperbody",
-        name: "Upper body and arm stretch",
-        still: "/assets/desk exercises/Upper body and arm stretch frames/1.gif",
-        live: "/assets/desk exercises/Upper body and arm stretch.gif"
+        name: "Upper Body and Arm Stretch",
+        still: "/assets/exercises_desk/upper_body_stretch/1.gif",
+        live: "/assets/exercises_desk/upper_body_stretch.gif"
     }
 ];
 
