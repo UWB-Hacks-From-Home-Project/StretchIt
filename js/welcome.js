@@ -1,4 +1,4 @@
-/*WELCOME PAGE HANDLER*/
+/*deals with welcome.html*/
 
 document.querySelector("#settingsBtn").onclick = () => {
     chrome.tabs.create({

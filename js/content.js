@@ -1,4 +1,4 @@
-/*CONTENT SCRIPT - ACTIVITY TRACKER*/
+/*content script must directly access the website's DOM to track mouse/keyboard movement*/
 
 let countKey = true;
 let countMouse = true;

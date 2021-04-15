@@ -41,7 +41,6 @@ const alarmClock = {
         chrome.alarms.clear("waterAlarm");
     },
 
-    //it is necesary to have an html object with the id or else it doesn't work
     install: function() {
         chrome.storage.local.get(['remindtype'], (res) => {
             if (res?.remindtype?.includes("breaks")) alarmClock.breakOnHandler();
@@ -65,7 +64,7 @@ alarmClock.install();
 
 /*NOTIFICATION SYSTEM*/
 
-let silentMode = false; //Don't send notifs if in silent mode
+let silentMode = false; //don't send notifs if in silent mode
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.tabs.create({
