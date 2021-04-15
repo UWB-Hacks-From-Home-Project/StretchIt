@@ -1,3 +1,6 @@
+/*main.js deals with anything that directly accesses main.html*/
+
+
 /*SILENT MODE*/
 
 let silentMode = false;
