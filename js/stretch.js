@@ -1,4 +1,4 @@
-/*STRETCH PAGE HANDLER*/
+/*deals with stretch.html*/
 
 let handStretches = [
     {

@@ -1,4 +1,4 @@
-/*OPTIONS SAVING, ETC*/
+/*options deals with options.html*/
 
 const showMsg = (htmlMsg, blockId, type) => {
     let msgBlock = document.querySelector(`#${blockId}`);
