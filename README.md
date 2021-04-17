@@ -55,7 +55,7 @@ However, if you want to install StretchIt manually, we've included steps below:
 
 3. Navigate to the extracted file and highlight it. Then hit "Select Folder"
 <p>
-    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/main/readme_images/setup2.png">
+    <img src="https://github.com/UWB-Hacks-From-Home-Project/StretchIt/blob/main/assets/readme_images/setup2.png">
 </p>
 
 4. Now it is installed! Configure your settings and StretchIt!
